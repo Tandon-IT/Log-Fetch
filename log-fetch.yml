@@ -1,6 +1,6 @@
 ---
 - name: Gather logs files from remote systems
-  hosts: panda
+  hosts: all
   become: yes
 
   tasks:
