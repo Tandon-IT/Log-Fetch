@@ -7,7 +7,7 @@
     - name: Find logs
       find:
         paths: /var/log/
-        patterns: '*.log'
+        patterns: '*secure*'
         recurse: yes
       register: _logs
 
