@@ -2,6 +2,7 @@
 - name: Gather logs files from remote systems
   hosts: all
   become: yes
+  become_method: sudo
 
   tasks:
     - name: Find logs
