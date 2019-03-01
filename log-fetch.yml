@@ -1,5 +1,5 @@
 ---
-- name: Gather logs files from test remote systems
+- name: Gather logs files from remote systems
   hosts: panda
   become: yes
 
@@ -7,7 +7,7 @@
     - name: Find logs
       find:
         paths: /var/log/
-        patterns: 'secure*'
+        patterns: '*.log'
         recurse: yes
       register: _logs
 
