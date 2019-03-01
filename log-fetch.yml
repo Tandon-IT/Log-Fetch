@@ -1,6 +1,6 @@
 ---
 - name: Gather logs files from remote systems
-  hosts: all
+  hosts: panda
   become: yes
 
   tasks:
@@ -14,5 +14,6 @@
     - name: Fetch logs
       fetch:
         src: "{{ item.path }}"
-        dest: '/var/tmp/logs'
-with_items: "{{ _logs.files }}"
+        dest: logs
+      with_items:
+        - "{{ _logs.files }}"
